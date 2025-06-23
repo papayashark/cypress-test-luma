@@ -1,0 +1,26 @@
+{
+  "name": "automation-framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "cy:ch": " cypress run --spec cypress/e2e/luma-ecom/*.cy.js --headed --browser chrome",
+    "cy:ch-headless": "cypress run --spec cypress/e2e/luma-ecom/*.cy.js --browser chrome",
+    "cy:ff": " cypress run --spec cypress/e2e/luma-ecom/*.cy.js --headed --browser firefox",
+    "cy:ch-regression": "cypress run --spec cypress/e2e/luma-ecom/*.cy.js --browser chrome --env grep=@regression"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cypress": "^14.5.0",
+    "cypress-grep": "^3.0.4",
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "cypress-xpath": "^2.0.1"
+  },
+  "dependencies": {
+    "@cypress/grep": "^4.1.0"
+  }
+}
