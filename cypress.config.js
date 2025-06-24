@@ -4,10 +4,11 @@ const cypressGrep = require("@cypress/grep");
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      cypressGrep(config);
+      cypressGrep(config); // plugin only
       require("cypress-mochawesome-reporter/plugin")(on);
       return config;
     },
+    supportFile: "cypress/support/e2e.js", // or index.js if you're using older versions
   },
 
   env: {
