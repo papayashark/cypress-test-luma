@@ -1,21 +1,18 @@
-import { defineConfig } from "cypress";
-import cypressGrep from '@cypress/grep';
+const { defineConfig } = require("cypress");
+const cypressGrep = require("@cypress/grep");
 
-export default defineConfig({
-
+module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       cypressGrep(config);
-      require('cypress-mochawesome-reporter/plugin')(on);
+      require("cypress-mochawesome-reporter/plugin")(on);
       return config;
-     
-      // implement node event listeners here
     },
   },
 
-  env:{
-    appUrl:'https://magento.softwaretestingboard.com/customer/account/login',
-    grepFilterSpecs: true
+  env: {
+    appUrl: 'https://magento.softwaretestingboard.com/customer/account/login',
+    grepFilterSpecs: true,
   },
 
   retries: 1,
@@ -26,13 +23,13 @@ export default defineConfig({
 
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir:"cypress/reports",
+    reportDir: "cypress/reports",
     charts: true,
     reportPageTitle: 'luma e-commerce report',
     embeddedScreenshots: true,
     inlineAssets: true,
     saveAllAttempts: false,
-    overwrite:false,
-    html:true
+    overwrite: false,
+    html: true,
   }
 });
