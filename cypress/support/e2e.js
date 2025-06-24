@@ -17,5 +17,5 @@
 import './commands'
 import 'cypress-mochawesome-reporter/register';
 import 'cypress-xpath'
-require('cypress-grep')();
+import '@cypress/grep';
 
