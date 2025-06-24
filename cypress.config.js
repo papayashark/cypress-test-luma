@@ -1,10 +1,11 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
+import cypressGrep from '@cypress/grep';
 
-module.exports = defineConfig({
+export default defineConfig({
 
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-grep/src/plugin')(config);
+      cypressGrep(config);
       require('cypress-mochawesome-reporter/plugin')(on);
       return config;
      
